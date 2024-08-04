@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Payment</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        #step1 {
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 400px;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1),
+                0 5px 12px -2px rgba(0, 0, 0, 0.1),
+                0 18px 36px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container .title {
+            font-size: 20px;
+        }
+
+        .container form input {
+            display: none;
+        }
+
+        .container form .category {
+            margin-top: 10px;
+            padding-top: 20px;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 15px;
+        }
+
+        /* Styles for payment method selection */
+        .category label {
+            height: 145px;
+            padding: 20px;
+            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 5px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        #visa:checked~.category .visaMethod,
+        #mastercard:checked~.category .mastercardMethod,
+        #paypal:checked~.category .paypalMethod,
+        #AMEX:checked~.category .amexMethod {
+            box-shadow: 0px 0px 0px 1px #6064b6;
+        }
+
+        #visa:checked~.category .visaMethod .check,
+        #mastercard:checked~.category .mastercardMethod .check,
+        #paypal:checked~.category .paypalMethod .check,
+        #AMEX:checked~.category .amexMethod .check {
+            display: block;
+        }
+
+        label .imgName {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .imgName span {
+            position: absolute;
+            top: 72%;
+            transform: translateY(-72%);
+        }
+
+        .imgName .imgContainer {
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 35%;
+            transform: translateY(-35%);
+        }
+
+        img {
+            width: 50px;
+            height: auto;
+        }
+
+        .visa img {
+            width: 80px;
+        }
+
+        .mastercard img {
+            width: 65px;
+        }
+
+        .paypal img {
+            width: 80px;
+        }
+
+        .AMEX img {
+            width: 50px;
+        }
+
+        .check {
+            display: none;
+            position: absolute;
+            top: -4px;
+            right: -4px;
+        }
+
+        .check i {
+            font-size: 18px;
+        }
+
+        /* Styles for payment form */
+        .hidden {
+            display: none;
+        }
+
+        .box {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .box2 {
+            width: calc(50% - 10px);
+            padding: 10px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #6064b6;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/aa7454d09f.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-gray-800 p-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="dashboard.html"><img src="/images/path_to_your_logo.png" alt="EasyPay Logo"
+                        style="width: 80px;" class="rounded-pill"></a>
+                <nav class="ml-10 space-x-4">
+                    <a href="dashboard.html" class="text-white font-semibold hover:underline">Home</a>
+                    <a href="top-up.html" class="text-white font-semibold hover:underline">Top-Up</a>
+                    <a href="payment.html" class="text-white font-semibold hover:underline">Payment</a>
+                    <a href="transactions.html" class="text-white font-semibold hover:underline">Transactions &
+                        Tracking</a>
+                    <a href="contact.html" class="text-white font-semibold hover:underline">Contact</a>
+                </nav>
+            </div>
+            <div>
+                <a href="profile.html"><img src="/images/backImg.jpg" alt="Profile Logo" style="width: 60px;"
+                        class="rounded-full"></a>
+            </div>
+        </div>
+    </header>
+    <!-- Step 1: Payment Method Selection -->
+    <div id="step1">
+        <div class="container">
+            <div class="title">
+                <h4>Select a <span style="color: #6064b6">Payment</span> method</h4>
+            </div>
+            <form id="paymentMethodForm" action="#">
+                <input type="radio" name="payment" id="visa">
+                <input type="radio" name="payment" id="mastercard">
+                <input type="radio" name="payment" id="paypal">
+                <input type="radio" name="payment" id="AMEX">
+                <div class="category">
+                    <label for="visa" class="visaMethod">
+                        <div class="imgName">
+                            <div class="imgContainer visa">
+                                <img src="https://i.ibb.co/vjQCN4y/Visa-Card.png" alt="">
+                            </div>
+                            <span class="name">VISA</span>
+                        </div>
+                        <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
+                    </label>
+                    <label for="mastercard" class="mastercardMethod">
+                        <div class="imgName">
+                            <div class="imgContainer mastercard">
+                                <img src="https://i.ibb.co/vdbBkgT/mastercard.jpg" alt="">
+                            </div>
+                            <span class="name">Mastercard</span>
+                        </div>
+                        <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
+                    </label>
+                    <label for="paypal" class="paypalMethod">
+                        <div class="imgName">
+                            <div class="imgContainer paypal">
+                                <img src="https://i.ibb.co/KVF3mr1/paypal.png" alt="">
+                            </div>
+                            <span class="name">Paypal</span>
+                        </div>
+                        <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
+                    </label>
+                    <label for="AMEX" class="amexMethod">
+                        <div class="imgName">
+                            <div class="imgContainer AMEX">
+                                <img src="https://i.ibb.co/wQnrX86/American-Express.jpg" alt="">
+                            </div>
+                            <span class="name">AMEX</span>
+                        </div>
+                        <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
+                    </label>
+                </div>
+                <button type="button" class="btn" onclick="showPaymentForm()">Next</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Step 2: Payment Form -->
+    <div id="step2" class="hidden">
+        <form id="paymentForm" action="dashboard.html">
+            <h1>Payment</h1>
+            <label for="Pname">Payer Name</label><br>
+            <input class="box" type="text" name="Pname" id="Pname" placeholder="Enter Name"><br>
+            <label for="Pemail">Enter Email</label><br>
+            <input class="box" type="text" name="Pemail" id="Pemail" placeholder="Enter Email"><br>
+            <label for="cardNumber">Card Number</label><br>
+            <input class="box" type="number" name="cardNumber" id="cardNumber" placeholder="1234 1234 1234 1234"><br>
+            <div class="div1">
+                <label for="month">Card expiry month</label><br>
+                <input class="box2" type="month" name="month" id="month"><br>
+            </div>
+            <div class="div1">
+                <label for="year">Card expiry year</label><br>
+                <input class="box2" type="year" name="year" id="year"><br>
+            </div>
+            <div class="div1">
+                <label for="cvc">Card CVC</label><br>
+                <input class="box2" type="CVC" name="cvc" id="cvc" placeholder="CVC"><br>
+            </div>
+            <label for="amount">Amount to Pay</label><br>
+            <select class="box" name="amount" id="amount">
+                <option value="10">$10</option>
+                <option value="20">$20</option>
+                <option value="50">$50</option>
+                <option value="custom">Custom</option>
+            </select><br>
+            <input class="box hidden" type="number" name="customAmount" id="customAmount" placeholder="Enter Amount"><br>
+            <button class="btn" type="button" onclick="submitPayment()">Pay now</button>
+            <button class="btn" type="button" onclick="showPaymentMethod()">Close</button>
+        </form>
+    </div>
+
+    <footer class="bg-gray-800 p-4 mt-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between text-white">
+            <p>&copy; 2024 EasyPay. All rights reserved.</p>
+            <a href="feedback.html" class="hover:underline">Feedback</a>
+        </div>
+    </footer>
+
+    <script>
+        function showPaymentForm() {
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.remove('hidden');
+        }
+
+        function showPaymentMethod() {
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step1').classList.remove('hidden');
+        }
+
+        function submitPayment() {
+            const amount = document.getElementById('amount').value;
+            let paymentAmount = amount === 'custom' ? document.getElementById('customAmount').value : amount;
+            alert(`Payment of $${paymentAmount} successful!`);
+        }
+
+        document.getElementById('amount').addEventListener('change', function () {
+            if (this.value === 'custom') {
+                document.getElementById('customAmount').classList.remove('hidden');
+            } else {
+                document.getElementById('customAmount').classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contact | EasyPay</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700&display=swap');
+
+        :root {
+            --bodyBg: #ffffff;
+            --formBg: #ffffff;
+            --textColor: bg-gray-800;
+            --primaryColor: #0076A3;
+            --paraColor: #5e6c79;
+            --paraColor: #74828f;
+
+        }
+
+        body {
+            color: var(--textColor);
+            background: var(--bodyBg);
+            padding-bottom: 5em;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 90%;
+            max-width: 550px;
+            margin: auto;
+            margin-top: 2em;
+        }
+
+        .sectionHeader {
+            text-transform: capitalize;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--primaryColor);
+            margin-bottom: .5em;
+        }
+
+        .heading,
+        .sub-heading {
+            margin-bottom: .5em;
+            font-weight: bold;
+        }
+
+        .heading {
+            font-size: 2.5em;
+        }
+
+        .sub-heading {
+            text-align: left;
+        }
+
+        .contactForm {
+            display: grid;
+            gap: 3em;
+        }
+
+        form {
+            width: 100%;
+            margin-top: 3em;
+        }
+
+        .para {
+            color: var(--paraColor);
+            font-size: 1.1rem;
+            line-height: 1.5em;
+            margin-bottom: 1em;
+        }
+
+        .para2 {
+            text-align: left;
+        }
+
+        .input {
+            width: 95%;
+            max-width: 700px;
+            border: none;
+            font-size: .9rem;
+            padding: 1em;
+            outline: none;
+            background-color: var(--formBg);
+            color: var(--paraColor);
+            border-radius: 10px;
+            border: 1px solid rgb(53, 53, 53);
+            margin-bottom: 1em;
+
+        }
+
+        .input:focus {
+            border: 3px solid var(--primaryColor);
+        }
+
+        .input::placeholder {
+            text-transform: capitalize;
+        }
+
+        .submit {
+            background-color: var(--primaryColor);
+            border: none;
+            color: var(--textColor);
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+
+        .mapBg {
+            position: absolute;
+            background-color: var(--primaryColor);
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 90%;
+            border-radius: 20px;
+        }
+
+        .map {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 90%;
+            height: 90%;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .contactMethod {
+            display: flex;
+            flex-direction: column;
+            margin-top: 2em;
+            text-align: left;
+        }
+
+        .method {
+            display: flex;
+            align-items: center;
+        }
+
+        .contactIcon {
+            font-size: 2rem;
+            color: var(--primaryColor);
+            width: 70px;
+        }
+
+        @media screen and (min-width:800px) {
+            section {
+                max-width: 1100px;
+            }
+
+            .contactForm {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contactMethod {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<script src="https://kit.fontawesome.com/aa7454d09f.js" crossorigin="anonymous"></script>
+
+<body>
+    <header class="bg-gray-800 p-4"> 
+        <div class="max-w-7xl mx-auto flex items-center justify-between"> 
+            <div class="flex items-center"> 
+                <a href="dashboard.html"><img src="/images/path_to_your_logo.png" alt="EasyPay Logo" style="width: 80px;" class="rounded-pill"></a>
+                <nav class="ml-10 space-x-4"> 
+                    <a href="dashboard.html" class="text-white font-semibold hover:underline">Home</a> 
+                    <a href="top-up.html" class="text-white font-semibold hover:underline">Top-Up</a> 
+                    <a href="payment.html" class="text-white font-semibold hover:underline">Payment</a> 
+                    <a href="transactions.html" class="text-white font-semibold hover:underline">Transactions & Tracking</a> 
+                    <a href="contact.html" class="text-white font-semibold hover:underline">Contact</a> 
+                </nav> 
+            </div> 
+            <div> 
+                <a href="profile.html"><img src="/images/backImg.jpg" alt="Profile Logo" style="width: 60px;" class="rounded-full"></a>
+            </div> 
+        </div> 
+    </header>
+    <section class="contact-form">
+        <h4 class="sectionHeader">contact us</h4>
+        <h1 class="heading">Get In Touch!</h1>
+        <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eos
+            inventore omnis aliquid rerum alias molestias.</p>
+
+        <div class="contactForm">
+            <form id="contactForm" action="dashboard.html">
+                <h1 class="sub-heading">Need Support !</h1>
+                <p class="para para2">Contact us for a quote , help to join the them.</p>
+                <input type="text" class="input" placeholder="your name">
+                <input type="text" class="input" placeholder="your email">
+                <input type="text" class="input" placeholder="your Subject">
+                <textarea class="input" cols="30" rows="5" placeholder="Your message..."></textarea>
+                <input type="submit" class="input submit" value="Send Message">
+            </form>
+
+            <div class="map-container">
+                <div class="mapBg"></div>
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9914410252845!2d2.291906375932066!3d48.85837360070842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sEiffel%20Tower!5e0!3m2!1sen!2set!4v1695627657575!5m2!1sen!2set"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="contactMethod">
+            <div class="method">
+                <i class="fa-solid fa-location-dot contactIcon"></i>
+                <article class="text">
+                    <h1 class="sub-heading">Location</h1>
+                    <p class="para">2276 Lynn Ogden Lane Beaumont</p>
+                </article>
+            </div>
+
+            <div class="method">
+                <i class="fa-solid fa-envelope contactIcon"></i>
+                <article class="text">
+                    <h1 class="sub-heading">Email</h1>
+                    <p class="para">Email: programminginsider2021@gmail.com</p>
+                </article>
+            </div>
+
+            <div class="method">
+                <i class="fa-solid fa-phone contactIcon"></i>
+                <article class="text">
+                    <h1 class="sub-heading">Phone</h1>
+                    <p class="para">2276 Lynn Ogden Lane Beaumont</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 p-4 mt-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between text-white">
+            <p>&copy; 2024 EasyPay. All rights reserved.</p>
+            <a href="feedback.html" class="hover:underline">Feedback</a>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Your message has been sent successfully!");
+            // You can uncomment the line below to allow form submission to proceed
+            this.submit();
+        });
+    </script>
+</body>
+
+</html>

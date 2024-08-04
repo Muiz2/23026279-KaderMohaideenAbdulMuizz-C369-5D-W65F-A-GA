@@ -3,59 +3,168 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EasyPay</title>
     <link rel="stylesheet" href="styles.css">
+    <title>EasyPay</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        body {
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .parallax-1 {
+            background: url('/images/bg.png') no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .parallax-2 {
+            background: url('/images/bg.jpg') no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .parallax-3 {
+            background: url('/images/frontImg.jpg') no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .text h1 {
+            padding: 10% 0;
+            font-size: 120px;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            -webkit-text-stroke: 3px black;
+            color: rgba(255, 255, 255, 0.563);
+        }
+
+        h2 {
+            font-size: 32px;
+            color: #555;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin: 20px 0 10px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            text-align: justify;
+            line-height: 30px;
+            margin: 0 50px 40px;
+        }
+
+        p:nth-of-type(2),
+        p:nth-of-type(3) {
+            margin: 40px 50px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navigation a {
+            position: relative;
+            color: darkcyan;
+            font-size: 1.1em;
+            margin: 0 7px;
+            text-decoration: none;
+            padding: 6px 20px;
+        }
+
+        .navigation a span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid black;
+            border-radius: 7px;
+            transform: scale(0);
+            opacity: 0;
+            transition: .5s;
+        }
+
+        .navigation a:hover span {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        @keyframes backText {
+            100% {
+                background-position: 2000px 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm">
-        <div class="container">
-            <div class="navbar">
-                <div class="menu">
-                    <h3 class="logo">Easy<span>Pay</span></h3>
-                    <div class="hamburger-menu">
-                        <div class="bar"></div>
-                    </div>
-                </div>
+    <header>
+        <nav class="navigation">
+            <a href="#home">Home<span></span></a>
+            <a href="#about">About<span></span></a>
+            <a href="#services">Services<span></span></a>
+            <a href="login.html">Get Started<span></span></a>
+        </nav>
+    </header>
+
+    <section>
+        <section id="home" class="parallax-1">
+            <div class="text">
+                <h1>EasyPay</h1>
             </div>
-
-            <div class="main-container">
-                <div class="main">
-                    <header>
-                        <div class="overlay">
-                            <div class="inner">
-                                <h2 class="title">Simplified Digital Payments for Businesses</h2>
-                                <a href="login.html"><button class="btn">SIGN UP / LOG IN</button></a>
-                            </div>
-                        </div>
-                    </header>
-                </div>
-
-                <div class="shadow one"></div>
-                <div class="shadow two"></div>
+        </section>
+        <h2>Simplified Digital Payments for Businesses</h2>
+        <p>In today's fast-paced business world, the need for efficient, secure, and seamless payment solutions is more critical than ever. 
+            Simplified digital payments have revolutionized how businesses handle transactions, offering a streamlined approach that enhances operational efficiency and 
+            customer satisfaction. EasyPay stands at the forefront of this transformation, providing cutting-edge payment solutions designed to meet 
+            the diverse needs of modern enterprises. With EasyPay, businesses can effortlessly manage payments, whether it's processing customer transactions, 
+            handling subscriptions, or managing payroll. Our platform integrates seamlessly with existing systems, allowing for real-time processing and reducing the complexities traditionally associated 
+            with financial transactions. Security is a cornerstone of our service, with advanced encryption and fraud detection technologies ensuring that every transaction is safeguarded against
+            potential threats. EasyPay also offers comprehensive analytics tools, empowering businesses with valuable insights into 
+            their financial operations, which aids in strategic decision-making. By focusing on user-friendly interfaces and robust support, EasyPay ensures 
+            that businesses of all sizes can leverage digital payments to drive growth, improve customer experiences, and achieve operational excellence. Whether
+            you're a small startup or a large corporation, EasyPay's innovative solutions are tailored to simplify your payment processes, allowing you to focus on what truly matters - growing your business and serving your customers.</p>
+        <section id="about"  class="parallax-2">
+            <div class="text">
+                <h1>About Us</h1>
             </div>
-
-            <div class="links">
-                <ul>
-                    <li>
-                        <a href="index.html" style="--i: 0.05s;">Home</a>
-                    </li>
-                    <li>
-                        <a href="about_us.html" style="--i: 0.1s;">About</a>
-                    </li>
-                    <li>
-                        <a href="services.html" style="--i: 0.25s;">Services</a>
-                    </li>
-                    <li>
-                        <a href="#" style="--i: 0.3s;">Contact</a>
-                    </li>
-                </ul>
+        </section>
+        <p>EasyPay offers a comprehensive digital payment solution designed specifically for small businesses, 
+            simplifying payment processes, reducing transaction fees, enhancing security, and ensuring compliance with regulatory 
+            standards. Our platform features a user-friendly interface, supports multiple payment options, and provides real-time 
+            transaction monitoring, detailed analytics, and seamless integration with popular business tools. With competitive transaction fees, 
+            advanced security measures, 24/7 customer support, and a mobile app for managing payments on the go, EasyPay ensures a seamless and secure payment experience for your customers. 
+            Additionally, our customizable solutions and adherence to regulatory standards provide small businesses with the tools needed for efficient financial management and growth.</p>
+        <section id="services" class="parallax-3">
+            <div class="text">
+                <h1>Services</h1>
             </div>
-        </div>
-    </nav>
-
-    <script src="app.js"></script>
+        </section>
+        <p><b>Digital Wallet</b> - Top-up and Payment</p><br>
+        <p><b>Fraud Prevention and AML Compliance</b> - Security Measures: Describe multi-factor authentication and identity verification processes.</p><br>
+        <p><b>Emerging Technologies</b> - Embedded Finance: Explain how EasyPay integrates financial services into small business operations.op-up and Payment</p><br>
+    </section>
 </body>
 
 </html>

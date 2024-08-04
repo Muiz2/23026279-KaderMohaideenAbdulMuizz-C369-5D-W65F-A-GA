@@ -76,9 +76,6 @@ body{
 }
 
 /* Side menubar section */
-nav{
-  background: #fff;
-}
 .side_navbar{
   padding: 1px;
   display: flex;
