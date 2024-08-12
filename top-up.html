@@ -56,6 +56,7 @@
             margin-top: 20px;
             text-align: center;
             display: inline-block;
+            cursor: pointer;
         }
 
         .top-up-btn:hover {
@@ -127,7 +128,8 @@
                 <a href="#" class="text-dark" data-bs-toggle="modal" data-bs-target="#topUpMethodsModal">Change</a>
             </div>
         </div>
-        <a href="dashboard.html" class="top-up-btn">Top Up</a>
+        <!-- Updated Top-Up Button -->
+        <a href="#" class="top-up-btn" onclick="handleTopUp()">Top Up</a>
     </div>
 
     <!-- Modal -->
@@ -181,6 +183,12 @@
             `;
             var modal = bootstrap.Modal.getInstance(document.getElementById('topUpMethodsModal'));
             modal.hide();
+        }
+
+        // New function to handle Top-Up button click
+        function handleTopUp() {
+            alert('Top-up successful! Redirecting to the dashboard...');
+            window.location.href = 'dashboard.html';
         }
     </script>
 </body>
