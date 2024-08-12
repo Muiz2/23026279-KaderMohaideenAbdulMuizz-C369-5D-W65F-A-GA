@@ -287,6 +287,7 @@
             const amount = document.getElementById('amount').value;
             let paymentAmount = amount === 'custom' ? document.getElementById('customAmount').value : amount;
             alert(`Payment of $${paymentAmount} successful!`);
+            window.location.href = 'dashboard.html'
         }
 
         document.getElementById('amount').addEventListener('change', function () {
